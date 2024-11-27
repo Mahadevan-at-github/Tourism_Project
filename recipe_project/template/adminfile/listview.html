@@ -1,0 +1,59 @@
+{% extends 'adminfile/index.html' %}
+{% load static %}
+
+{% block contents %}
+
+
+<h1>Hello admin</h1>
+
+
+
+<table class="table">
+  <thead>
+    <tr class="text-center">
+      <th scope="col">Sl.No</th>
+      <th scope="col">Username</th>
+      <th scope="col">Password</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+  {% for user in page %}
+    <tr class="text-center">
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{ user.username }}</td>
+      <td>{{ user.password }}</td>
+      <td class="text-center">
+        <a href="" class="btn btn-outline-warning me-2">Update</a>
+        <a href="" class="btn btn-outline-danger">Delete</a>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    {% if page.has_previous %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ page.previous_page_number }}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    {% endif %}
+
+    {% for num in page.paginator.page_range %}
+    <li class="page-item {% if page.number == num %} activate{% endif %}">
+      <a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+    {% endfor %}
+    {% if page.has_next %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ page.next_page_number }}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
+
+{% endblock %}

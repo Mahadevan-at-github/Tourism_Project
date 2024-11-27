@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active ms-5 mt-5">
+      <img class="d-block" src="{{ data.Destination_Img }}" alt="First slide" style="width:600px; height: 500px;">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block" src="{{ data.Destination_Img1 }}" alt="Second slide"  style="width:200px; height: 500px;">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block" src="{{ data.Destination_Img2 }}" alt="Third slide" style="width:200px; height: 800px;">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block" src="{{ data.Destination_Img3 }}" alt="Third slide" style="width:200px; height: 800px;">
+    </div>
+    <div class="container d-flex justify-content-end" style="margin: 50px;">
+      <table style="margin-left: 700px;">
+        <tr>
+          <th>
+            <h3 style="margin-top: 50px;">Place</h3>
+          </th>
+          <td class="ps-5">
+            <h6 style="margin-top: 50px;">{{ data.PlaceName }}</h6>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <h3 style="margin-top: 50px;">Description</h3>
+          </th>
+          <td class="ps-5">
+            <h6 style="margin-top: 50px;">{{ data.Description }}</h6>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <h3 style="margin-top: 50px;">State</h3>
+          </th>
+          <td class="ps-5">
+            <h6 style="margin-top: 50px;">{{ data.State }}</h6>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <h3 style="margin-top: 50px;">District</h3>
+          </th>
+          <td class="ps-5">
+            <h6 style="margin-top: 50px;">{{ data.District }}</h6>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h3 style="margin-top: 50px;">Weather</h3>
+          </td>
+          <td class="ps-5">
+            <h6 style="margin-top: 50px;">{{ data.Weather }}</h6>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h3 style="margin-top: 50px;">Location</h3>
+          </td>
+          <td class="ps-5" >
+            <a href="{{ data.Location_Link }}">{{ data.Location_Link }}</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,49 @@
+{% extends 'adminfile/index.html' %}
+{% load static %}
+
+{% block contents %}
+
+
+<h1>{{ data.PlaceName }} Detail</h1>
+
+
+
+<table class="table">
+  <thead>
+    <tr class="text-center">
+      <th scope="col">Image</th>
+      <th scope="col">PlaceName</th>
+      <th scope="col">State</th>
+      <th scope="col">District</th>
+      <th scope="col">Weather</th>
+      <th scope="col">Location</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <tr class="text-center">
+      <td><img src="{{ data.Destination_Img }}" alt="..." class="img-thumbnail" style="  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;"></td>
+      <td>{{ data.PlaceName }}</td>
+            <td>{{ data.State }}</td>
+
+            <td>{{ data.District }}</td>
+
+      <td>
+        {{ data.Weather }}
+      </td>
+        <td>{{ data.Location_Link }}</td>
+
+    </tr>
+      <tr class="text-center">
+    <th colspan="6">Description</th>
+  </tr>
+  <tr class="text-center">
+    <td colspan="6">{{ data.Description }}</td>
+  </tr>
+  </tbody>
+</table>
+
+
+{% endblock %}
